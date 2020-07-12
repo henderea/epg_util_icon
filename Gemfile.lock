@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    epg_util_icon (1.0.2)
+    epg_util_icon (1.0.3)
       everyday-plugins (~> 1.2, >= 1.2.2)
       fastimage_resize (~> 2.0, >= 2.0.3)
 
