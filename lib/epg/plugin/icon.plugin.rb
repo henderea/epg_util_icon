@@ -50,7 +50,7 @@ module EpgUtil
     register(:command, id: :icon_favicon, parent: :icon, name: 'favicon', aliases: %w(fav gen_fav gen_favicon), short_desc: 'favicon [input_file="Icon.png" [output_file="favicon.ico"]]', desc: 'generate a multi-resolution favicon') { |input_file = 'Icon.png', output_file = 'favicon.ico'|
       sizes = [16, 32, 48, 57, 64, 72, 96, 110, 114, 120, 128, 144, 152, 180, 192, 195, 228, 310]
       puts 'Generating favicon file'
-      `convert #{input_file} -background transparent #{sizes.map { |s| "\\( -clone 0 -resize #{s}x#{s} \\)" }.join(' ')} -delete 0 -alpha on -depth 32 #{output_file}`
+      `convert '#{input_file}'' -background transparent #{sizes.map { |s| "\\( -clone 0 -resize #{s}x#{s} \\)" }.join(' ')} -delete 0 -alpha on -depth 32 '#{output_file}'`
       puts "Your file is called: #{output_file}\nDone!"
     }
   end
